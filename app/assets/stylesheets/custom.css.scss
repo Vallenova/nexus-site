@@ -3,33 +3,40 @@
 @import "font-awesome";
 
 body {
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 1.42857;
-    color: #EBEBEB;
-    background-color: #CECECE;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  line-height: 1.42857;
+  color: #EBEBEB;
+  background: url("_bg.jpg") repeat fixed center top transparent;
+  color: #555;
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 /********* Logo *********/
 
 .top-bar {
-    padding: 10px 0px;
-    background: none repeat scroll 0% 0% #4E4E4E;
-    /*line-height: 28px;*/
-    color: #FFF;
+  padding: 10px 20px;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  color: #FFF;
 }
 
-/********* Datos *********/
+/********* Datos de Cabecera*********/
 
 #datos a {
-    color: inherit;
-    display: inline-block;
-    color: #FFF;
-    background: none repeat scroll 0% 0% #428BCA;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    border-radius: 5px;
+  color: inherit;
+  display: inline-block;
+  color: #FFF;
+  background: none repeat scroll 0% 0% #428BCA;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  border-radius: 5px;
 }
+
 #datos a:hover {
   background-color: #C52D2F;
   color: #FFF;
@@ -37,21 +44,23 @@ body {
 }
 
 #datos ul {
-    margin: 0px;
-    padding: 0px;
-    list-style: outside none none;
+  margin: 0px;
+  padding: 0px;
+  list-style: outside none none;
 }
 
 #datos ul li{
-    display: inline-block;
+  display: inline-block;
 }
 
 /*********Sub Menus*********/
 .dropdown-menu {
-    border: medium none;
-    box-shadow: none;
-    background-color: #4E4E4E;
-    border-radius: 0px;
+  border: medium none;
+  box-shadow: none;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 1;
+  border-radius: 0px;
 }
 
 .dropdown-submenu{
@@ -82,7 +91,6 @@ float:none;
 }
 
 
-
 /*********Menu*********/
 .navbar {
     border-radius: 0px;
@@ -91,7 +99,10 @@ float:none;
 
 .navbar-inverse {
     border-color: transparent;
-    background-color: #4E4E4E;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    
 }
 
 .navbar-inverse .navbar-nav > li > a {
@@ -116,8 +127,7 @@ float:none;
 
 
 
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
+/*------CAROUSEL-------- */
 
 /* Carousel base class */
 .carousel {
@@ -151,61 +161,69 @@ float:none;
 }
 
 .carousel-control {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    width: 15%;
-    opacity: 1;
-    font-size: 20px;
-    color: #FFF;
-    text-align: center;
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  width: 15%;
+  opacity: 1;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .carousel-control.left {
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
-    background-repeat: repeat-x;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+  background-repeat: repeat-x;
 	width: 40px;
 
 }
 
 .carousel-control.right {
-    left: auto;
-    right: 0px;
-    background-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
-    background-repeat: repeat-x;
-    width: 40px;
+  left: auto;
+  right: 0px;
+  background-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 100%);
+  background-repeat: repeat-x;
+  width: 40px;
 }
 
-
+/******Pie de Pagina ******/
 .footer {
-    background-color: #4E4E4E;
-    color: #FFF;
-    padding: 17px 0px;
-    text-align: center;
-    border-top: 1px solid #555;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
+  color: #FFF;
+  padding: 17px 0px;
+  text-align: left;
+  border-top: 0px solid #555;
 }
 
 .footer p {
-	margin: 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
 }
 
 .footer a {
-  /*color: inherit;*/
   text-decoration: none;
 }
 
 .footer ul {
+  margin: 0px;
+  padding: 0px;
   list-style: outside none none;
 }
 
+.footer ul li{
+  display: inline-block;
+}
+
+/****Galeria****/
 #recent-works .col-xs-12.col-sm-4.col-md-3{
   padding: 15px;
 }
 
 #recent-works{
-    padding-bottom: 0px;
+  padding-bottom: 0px;
 }
 
 .recent-work-wrap {
@@ -244,7 +262,6 @@ float:none;
   height: 100%;
   opacity: 0;
   border-radius: 0;
-  /*background: #c52d2f;*/
   color: #fff;
   vertical-align: middle;
   -webkit-transition: opacity 500ms;
@@ -273,15 +290,19 @@ float:none;
 .recent-work-wrap .comentario {
 	padding: 5px;
 	position: relative;
-	background: none repeat scroll 0% 0% #C52D2F;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
 	color: #FFF;
 	text-align: center;
+  height: 50px;
 }
 
-
+/**********Panel de Diplomados**********/
 #diplomados .panel {
-  /*margin-bottom: 10px;*/
-	background-color: #428BCA;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
 	border: 0px solid transparent;
 	border-radius: 0px;
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
@@ -289,18 +310,20 @@ float:none;
 }
 
 #diplomados .panel-default > .panel-heading {
-    color: rgb(255, 255, 255);
-    border-color: #DDD;
-    background-color: #4d4d4d;
-    border-top-right-radius: 0px;
+  color: rgb(255, 255, 255);
+  border-color: #DDD;
+  background: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  border-top-right-radius: 0px;
 	border-top-left-radius: 0px;
 }
 
 #diplomados .panel-default a {
-    color: #FFF;
-    text-decoration: none;
+  color: #FFF;
+  text-decoration: none;
 }
 
 .panel-group .panel-heading + .panel-collapse > .panel-body {
-    border-top: 0px solid #DDD;
+  border-top: 0px solid #DDD;
 }
