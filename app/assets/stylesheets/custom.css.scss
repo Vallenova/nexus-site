@@ -84,6 +84,7 @@ float:none;
 
 .dropdown-menu > li > a {
     color: #FFF;
+    
 }
 
 .dropdown-menu > li > a:hover {
@@ -112,7 +113,7 @@ float:none;
     border-radius: 0px;
     color: #FFF;
     line-height: 24px;
-    display: inline-block;
+    display: block;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
@@ -127,6 +128,9 @@ float:none;
     color: #FFF;
 }
 
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #FFF;
+}
 
 
 /*------CAROUSEL-------- */
@@ -197,7 +201,7 @@ float:none;
   opacity: 1;
   color: #FFF;
   padding: 17px 0px;
-  text-align: left;
+  text-align: center;
   border-top: 0px solid #555;
 }
 
