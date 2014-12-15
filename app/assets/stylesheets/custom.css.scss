@@ -15,7 +15,7 @@ body {
   overflow-x: hidden;
   background: url("bg.jpg") repeat fixed center top transparent;
 }
-/**********Cielos*********/
+
 /********* Logo *********/
 
 .top-bar {
@@ -130,6 +130,11 @@ float:none;
 
 .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #FFF;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: #FFF;
+    background-color: #C52D2F;
 }
 
 
