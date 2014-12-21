@@ -1,5 +1,5 @@
 class EstructuraPaginasController < ApplicationController
-  def Inicio
+  def inicio
   end
 
   def acerca

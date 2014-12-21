@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  #get 'estructura_paginas/Inicio'
-  root 'estructura_paginas#Inicio'
+  #get 'estructura_paginas/inicio'
+  root 'estructura_paginas#inicio'
   match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
