@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "EstructuraPaginas", :type => :request do
+#RSpec.describe "EstructuraPaginas", :type => :request do
+describe "Estructura Paginas" do
   describe "GET /estructura_paginas" do
-    it "works! (now write some real specs)" do
+    it "La pagina responde correctamente" do
       get root_path
       expect(response).to have_http_status(200)
     end
