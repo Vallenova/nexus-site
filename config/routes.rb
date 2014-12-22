@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   #get 'estructura_paginas/inicio'
   root 'estructura_paginas#inicio'
   match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
+
+  namespace :admin do
+    resources :admin_paginas
+    root 'admin_paginas#index'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
