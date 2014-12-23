@@ -1,0 +1,31 @@
+<% provide(:titulo, "Areas") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_areas_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th>Imagen</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @areas.each do |area| %>
+      <tr>
+        <td><%= link_to "#{area.id}", admin_area_path(area) %></td>
+        <td><%= area.nombre %></td>
+        <td><%= area.estado %></td>
+        <td><%= area.picture %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

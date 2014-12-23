@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Admin::AdminPaginas", :type => :request do
   describe "GET /admin_admin_paginas" do
-    it "works! (now write some real specs)" do
+    it "AdminPaginas" do
       get admin_root_path
       expect(response).to have_http_status(200)
     end

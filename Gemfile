@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '3.2'
 gem 'high_voltage', '2.1.0'
 gem 'thin', '1.6.2'
 gem "font-awesome-rails"
+gem 'carrierwave'
 
 group :development do
   gem 'spring', '1.1.3'

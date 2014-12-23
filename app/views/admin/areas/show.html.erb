@@ -1,0 +1,23 @@
+<% provide(:titulo, @area.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_areas_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_area_path(@area) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Area:</strong>
+  <%= @area.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @area.estado %>
+</p>
+
+<p>
+  <strong>Picture:</strong><br>
+  <%= image_tag(@area.picture_url, :width => 100) if @area.picture.present? %>
+</p>

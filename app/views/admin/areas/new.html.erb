@@ -1,0 +1,47 @@
+<% provide(:titulo, "Nueva Area") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_areas_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @area, url: admin_areas_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @area.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        El formulario contiene <%= pluralize(@area.errors.count, "error") %>
+      
+      <ul>
+      <% @area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]]) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture, class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.file_field :picture %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

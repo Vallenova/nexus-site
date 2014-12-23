@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
+  #namespace :admin do
+  #get 'areas/new'
+  #end
+
   #get 'estructura_paginas/inicio'
   root 'estructura_paginas#inicio'
   match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
-
+  
   namespace :admin do
-    resources :admin_paginas
+    #resources :admin_paginas
+    resources :areas
     root 'admin_paginas#index'
+    match '/nueva_area',  to: 'areas#new',            via: 'get'
+    #get 'areas/new'
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
