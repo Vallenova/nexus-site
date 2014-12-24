@@ -4,14 +4,14 @@
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <% @areas.each do |area| %>
-    <%= tag("li", data: {target: "#myCarousel", slide_to:"#{area.id}"}, class: ("active" if area.id == 1)) %>
+    <%= tag("li", data: {target: "#myCarousel", slide_to:"#{area.id}"}, class: ("active" if @areas.first == area)) %>
     <% end %>
   </ol>
 
   <!-- Sliders -->
   <div class="carousel-inner" >
     <% @areas.each do |area| %>
-      <%= content_tag :div, class: (area.id == 1 ? "item active" : "item") do -%>
+      <%= content_tag :div, class: (@areas.first == area ? "item active" : "item") do -%>
         <%= image_tag area.picture, class: "img-responsive" %>
       <% end -%>
     <% end %>

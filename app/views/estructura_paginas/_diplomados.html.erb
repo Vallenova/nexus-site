@@ -1,13 +1,14 @@
 <section id="diplomados">
 <!--Panel-->
 <div class="panel-group" id="accordion">
+<% @areas.each do |area| %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><b>Administración de Empresas</b></a>
+        <b><%= link_to "#{area.nombre}", "#collapse_#{area.id}", data: {toggle: "collapse", parent: "#accordion"}  %></b>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in">
+    <%= content_tag :div, id: "collapse_#{area.id}", class: (@areas.first == area ? "panel-collapse collapse in" : "panel-collapse collapse") do -%>
       <div class="panel-body">
         <table class="table">
           <tbody>
@@ -29,99 +30,9 @@
           </tbody>
         </table>
       </div>
-    </div>
+    <% end -%>
   </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"><b>Ingenieria</b></a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse">
-      <div class="panel-body">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>
-                <a href="#">Ingenieria Ambiental</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Tecnologias de Información</a>
-              </td>
-             </tr>
-            <tr>
-              <td>
-                <a href="#">Gerencia de Proyectos</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree"><b>Area 3</b></a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse">
-      <div class="panel-body">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>
-                <a href="#">Diplomado 1</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Diplomado 2</a>
-              </td>
-             </tr>
-            <tr>
-              <td>
-                <a href="#">Diplomado 3</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour"><b>Area 4</b></a>
-      </h4>
-    </div>
-    <div id="collapseFour" class="panel-collapse collapse">
-      <div class="panel-body">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td>
-                <a href="#">Diplomado 1</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Diplomado 2</a>
-              </td>
-             </tr>
-            <tr>
-              <td>
-                <a href="#">Diplomado 3</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+<% end %>
 
 <!--/Panel-->
 </section>
