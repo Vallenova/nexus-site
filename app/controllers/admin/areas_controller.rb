@@ -19,7 +19,7 @@ class Admin::AreasController < ApplicationController
   end
 
   def index
-  	@areas = Area.all
+  	@areas = Area.all.order('id')
   end
 
   def edit

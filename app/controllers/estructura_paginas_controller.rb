@@ -1,7 +1,7 @@
 class EstructuraPaginasController < ApplicationController
 
   def inicio
-  	@areas=Area.all
+  	@areas=Area.all.order('id')
   end
 
   def acerca
