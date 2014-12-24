@@ -22,4 +22,9 @@ RSpec.describe Area, :type => :model do
   	it {should_not be_valid}
   end
 
+  describe "Cuando picture no esta presente" do
+    before { @area.picture= " "}
+    it {should_not be_valid}
+  end
+
 end

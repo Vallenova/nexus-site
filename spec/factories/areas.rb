@@ -4,7 +4,6 @@ FactoryGirl.define do
   factory :area do
     nombre "Administración"
     estado "A"
-    #picture "bg4.jpg"
-    picture File.open(File.join(Rails.root, '/spec/support/archivos/bg4.jpg'))
+    picture "bg4.jpg"
   end
 end

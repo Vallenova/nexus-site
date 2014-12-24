@@ -41,7 +41,7 @@ RSpec.describe "Admin::Areas", :type => :request do
       before do
         fill_in "Nombre", with: "Ingenieria"
         select 'Activo', :from => 'Estado'
-        attach_file 'Picture', File.join(Rails.root, 'spec', 'support','archivos', 'bg4.jpg') 
+        fill_in "Picture", with: "bg4.jpg"
       end
 
       it "deberia crear un area" do
