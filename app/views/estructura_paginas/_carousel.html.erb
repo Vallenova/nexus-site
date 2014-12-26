@@ -3,8 +3,8 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @areas.each do |area| %>
-    <%= tag("li", data: {target: "#myCarousel", slide_to:"#{area.id}"}, class: ("active" if @areas.first == area)) %>
+    <% @areas.each_index do |area| %>
+    <%= tag("li", data: {target: "#myCarousel", slide_to:"#{area}"}, class: ("active" if area == 0)) %>
     <% end %>
   </ol>
 
