@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   namespace :admin do
     #resources :admin_paginas
     resources :areas
+    resources :diplomados
     root 'admin_paginas#index'
     match '/nueva_area',  to: 'areas#new',            via: 'get'
+    match '/nuevo_diplomado', to: 'diplomados#new',   via: 'get'
     #get 'areas/new'
 
   end

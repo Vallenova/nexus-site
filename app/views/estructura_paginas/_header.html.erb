@@ -1,0 +1,68 @@
+<header>
+  <div class="top-bar">
+    <div class="row">
+	  <div class="col-md-4">
+	    <%= link_to(root_path) do %>
+	      <%=image_tag "https://e38e9f49392eff047bfa182107ab8f156aef9878.googledrive.com/host/0B3Bz2RFRgSMWQXk4c3h4R0dYZjA/logo_nexus.png", class: "img-responsive" %>
+	    <% end %>
+	  </div>
+	  <div class="col-md-4">
+	    &nbsp
+	  </div>
+	  <div class="col-md-4">
+	    <article id="datos">
+	      <ul>
+	        <li><p>
+	          <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>&nbsp(052) - 634930 <br>
+	          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp Modesto Molina 1018 Cercado Tacna-Perú <br>
+	          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp nexuspro.training@gmail.com</p></li>
+	      </ul>
+	      <ul>
+	        <li><a class="social-icon-ar twitter" href="https://twitter.com/nexuspro_group"><i class="fa fa-twitter fa-2x"></i></a></li>
+	        <li><a class="social-icon-ar plus" href="https://plus.google.com/116418262220046511753/posts"><i class="fa fa-google-plus fa-2x"></i></a></li>
+	        <li><a class="social-icon-ar facebook" href="https://www.facebook.com/pages/Nexus-Pro-Training/559871187422206"><i class="fa fa-facebook fa-2x"></i></a></li>
+	        <li><a class="social-icon-ar youtube" href="https://www.youtube.com/channel/UC07KWCVUZ70UReQD1NcYWkQ"><i class="fa fa-youtube fa-2x"></i></a></li>
+	      </ul>
+	    </article>
+	  </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Despliegue Menú</span>
+     	  <span class="icon-bar"></span>
+     	  <span class="icon-bar"></span>
+      	  <span class="icon-bar"></span>
+    	</button>
+      </div>			
+      <div class="collapse navbar-collapse navbar-right">
+        <ul class="nav navbar-nav">
+          <li><%= link_to "INICIO", root_path %></li>
+          <li><%= link_to "ACERCA DE", acerca_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">CURSOS Y DIPLOMADOS</a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+
+	          <% @areas.each do |area| %>
+	            <li class="dropdown-submenu">
+		          <a tabindex="-1"><b><%= area.nombre %></b></a>
+			      <ul class="dropdown-menu">
+			 	    <li><a href="#">Habilidades Directivas</a></li>
+			 	    <li><a href="#">Marketing</a></li>
+			 	    <li><a href="#">Finanzas</a></li>
+	 		      </ul>
+		   	    </li>
+		      <% end %>
+		      
+      	    </ul>
+     	  </li>
+     	  <li><a href="#">CALENDARIO</a></li>
+     	  <li><a href="#">INSCRIPCIÓN</a></li>  
+     	  <li><a href="#">CONTACTO</a></li>                   
+        </ul>
+      </div>
+    </div><!--/.container-->
+  </nav><!--/nav-->
+</header>

@@ -14,7 +14,7 @@
 
 <p>
   <strong>Estado:</strong>
-  <%= @area.estado %>
+  <%= (@area.estado == 'A' ? "Activo" : "Inactivo") %>
 </p>
 
 <p>

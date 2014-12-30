@@ -35,7 +35,7 @@ class Admin::AreasController < ApplicationController
 	  end
   end
 
-
+  private
 
   def area_params
   	params.require(:area).permit(:nombre,:estado,:picture)
