@@ -1,0 +1,24 @@
+<% provide(:titulo, @modulo.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_modulo_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_modulos_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_modulo_path(@modulo) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Nombre:</strong>
+  <%= @modulo.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@modulo.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+<p>
+  <strong>Diplomado:</strong>
+  <%= @modulo.diplomado.nombre %>
+</p>
+

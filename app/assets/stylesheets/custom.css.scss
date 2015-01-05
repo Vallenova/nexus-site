@@ -10,7 +10,11 @@
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
-  background: url("https://e38e9f49392eff047bfa182107ab8f156aef9878.googledrive.com/host/0B3Bz2RFRgSMWQXk4c3h4R0dYZjA/bg.jpg") repeat fixed center top transparent;
+  background: url("bg.jpg") repeat fixed center top transparent;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /********* Logo *********/

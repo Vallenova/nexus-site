@@ -11,9 +11,11 @@ Rails.application.routes.draw do
     #resources :admin_paginas
     resources :areas
     resources :diplomados
+    resources :modulos
     root 'admin_paginas#index'
     match '/nueva_area',  to: 'areas#new',            via: 'get'
     match '/nuevo_diplomado', to: 'diplomados#new',   via: 'get'
+    match '/nuevo_modulo', to: 'modulos#new',   via: 'get'
     #get 'areas/new'
 
   end

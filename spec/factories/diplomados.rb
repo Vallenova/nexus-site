@@ -12,4 +12,11 @@ FactoryGirl.define do
     inversion "24"
     picture "https://dominio.com/fotografia.jpg"
   end
+
+  factory :modulo do
+    nombre "Modulo 1"
+    estado "A"
+    diplomado
+  end
+
 end

@@ -28,11 +28,11 @@ class Admin::DiplomadosController < ApplicationController
 
   def update
   	@diplomado= Diplomado.find(params[:id])
-	if @diplomado.update_attributes diplomado_params
-	  redirect_to admin_diplomado_path(@diplomado)
-	else
-	  render 'edit'
-	end
+  	if @diplomado.update_attributes diplomado_params
+  	  redirect_to admin_diplomado_path(@diplomado)
+  	else
+  	  render 'edit'
+  	end
   end
 
   private

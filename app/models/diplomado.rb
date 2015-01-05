@@ -1,4 +1,5 @@
 class Diplomado < ActiveRecord::Base
+  has_many :modulos
   validates :nombre, presence: true
   validates :estado, presence: true
   validates :descripcion, presence: true

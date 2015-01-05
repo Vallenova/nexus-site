@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230004426) do
+ActiveRecord::Schema.define(version: 20141231221808) do
 
   create_table "areas", force: :cascade do |t|
     t.string   "nombre"
@@ -34,5 +34,15 @@ ActiveRecord::Schema.define(version: 20141230004426) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "modulos", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "estado"
+    t.integer  "diplomado_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "modulos", ["diplomado_id"], name: "index_modulos_on_diplomado_id"
 
 end

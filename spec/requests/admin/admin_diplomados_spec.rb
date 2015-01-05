@@ -77,9 +77,6 @@ RSpec.describe "Admin::Diplomados", :type => :request do
 
   	  specify { expect(diplomado.reload.nombre).to eq nuevo_nombre }
   	  specify { expect(diplomado.reload.estado).to eq nuevo_estado }
-
   	end
-
   end
-
 end

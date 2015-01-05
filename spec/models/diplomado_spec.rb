@@ -14,6 +14,7 @@ RSpec.describe Diplomado, :type => :model do
   it {should respond_to(:horas_acad)}
   it {should respond_to(:inversion)}
   it {should respond_to(:picture)}
+  it {should respond_to(:modulos)}
 
   it {should be_valid}
 
