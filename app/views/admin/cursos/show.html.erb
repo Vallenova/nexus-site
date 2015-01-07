@@ -1,0 +1,24 @@
+<% provide(:titulo, @curso.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_curso_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_cursos_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_curso_path(@curso) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Nombre:</strong>
+  <%= @curso.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@curso.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+<p>
+  <strong>Módulo:</strong>
+  <%= @curso.modulo.nombre %>
+</p>
+

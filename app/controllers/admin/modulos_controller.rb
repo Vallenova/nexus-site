@@ -2,7 +2,7 @@ class Admin::ModulosController < ApplicationController
   layout 'admin'
 
   def index
-  	@modulos = Modulo.all.order(:id)
+  	@modulos = Modulo.all.order(:diplomado_id)
   end
 
   def show

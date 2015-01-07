@@ -19,4 +19,10 @@ FactoryGirl.define do
     diplomado
   end
 
+  factory :curso do
+    nombre "Curso 1"
+    estado "A"
+    modulo
+  end
+
 end

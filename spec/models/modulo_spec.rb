@@ -13,6 +13,7 @@ RSpec.describe Modulo, :type => :model do
   it {should respond_to(:estado)}
   it {should respond_to(:diplomado_id)}
   it {should respond_to(:diplomado)}
+  it {should respond_to(:cursos)}
 
   it {should be_valid}
 
