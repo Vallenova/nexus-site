@@ -1,5 +1,6 @@
 class Diplomado < ActiveRecord::Base
   has_many :modulos
+  has_many :area_diplomados, foreign_key: "diplomado_id"
   validates :nombre, presence: true
   validates :estado, presence: true
   validates :descripcion, presence: true

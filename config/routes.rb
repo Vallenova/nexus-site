@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :diplomados
     resources :modulos
     resources :cursos
+    resources :area_diplomados
     root 'admin_paginas#index'
     #match desaparecera en rails 5
     #match '/nueva_area',  to: 'areas#new',            via: 'get'
@@ -25,7 +26,7 @@ Rails.application.routes.draw do
     get 'nuevo_diplomado'   => 'diplomados#new'
     get 'nuevo_modulo'      => 'modulos#new'
     get 'nuevo_curso'       => 'cursos#new'
-
+    get 'nueva_area_diplomado'  => 'area_diplomados#new'
     #get 'areas/new'
 
   end

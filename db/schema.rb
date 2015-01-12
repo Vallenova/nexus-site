@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106222621) do
+ActiveRecord::Schema.define(version: 20150111174500) do
+
+  create_table "area_diplomados", force: :cascade do |t|
+    t.string   "estado"
+    t.integer  "area_id"
+    t.integer  "diplomado_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "area_diplomados", ["area_id", "diplomado_id"], name: "index_area_diplomados_on_area_id_and_diplomado_id", unique: true
+  add_index "area_diplomados", ["area_id"], name: "index_area_diplomados_on_area_id"
+  add_index "area_diplomados", ["diplomado_id"], name: "index_area_diplomados_on_diplomado_id"
 
   create_table "areas", force: :cascade do |t|
     t.string   "nombre"

@@ -1,6 +1,12 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
+  factory :area do
+    nombre "Administración"
+    estado "A"
+    picture "bg4.jpg"
+  end
+  
   factory :diplomado do
     nombre "Habilidades Directivas"
     estado "A"
@@ -23,6 +29,12 @@ FactoryGirl.define do
     nombre "Curso 1"
     estado "A"
     modulo
+  end
+
+  factory :area_diplomado do
+    estado "A"
+    area
+    diplomado
   end
 
 end
