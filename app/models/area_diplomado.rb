@@ -5,4 +5,6 @@ class AreaDiplomado < ActiveRecord::Base
   validates :area_id, presence: true
   validates :diplomado_id, presence: true
   validates :estado, presence: true
+
+  validates_uniqueness_of :area_id, :scope => :diplomado_id
 end

@@ -1,0 +1,50 @@
+<% provide(:titulo, "Nueva Asignación") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_area_diplomados_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @area_diplomado, url: admin_area_diplomados_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @area_diplomado.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+      El formulario contiene <%= pluralize(@area_diplomado.errors.count, "error") %>
+    
+        <ul>
+          <% @area_diplomado.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :area_id, "Área", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :area_id, options_from_collection_for_select(@areas, 'id', 'nombre'), :prompt => "Seleccione" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :diplomado_id, "Diplomado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :diplomado_id, options_from_collection_for_select(@diplomados, 'id', 'nombre'), :prompt => "Seleccione" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :estado, "Estado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]]) %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
