@@ -49,9 +49,15 @@
 	            <li class="dropdown-submenu">
 		          <a tabindex="-1"><b><%= area.nombre %></b></a>
 			      <ul class="dropdown-menu">
-			 	    <li><a href="#">Habilidades Directivas</a></li>
-			 	    <li><a href="#">Marketing</a></li>
-			 	    <li><a href="#">Finanzas</a></li>
+			 	    <% @area_diplomados.each do |area_diplomado| %>
+		              <% if area == area_diplomado.area %>
+		                <tr>
+		                  <td>
+		                    <li><a href="#"><%= area_diplomado.diplomado.nombre %></a></li>
+		                  </td>
+		                </tr>
+		              <% end %>
+		            <% end %>
 	 		      </ul>
 		   	    </li>
 		      <% end %>
