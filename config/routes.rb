@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root 'estructura_paginas#inicio'
   #match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
   get 'acerca'        => 'estructura_paginas#acerca'
-  
+  get 'diplomado/:id' => 'estructura_paginas#diplomado', :as => 'diplomado'
+
   namespace :admin do
     #resources :admin_paginas
     resources :areas

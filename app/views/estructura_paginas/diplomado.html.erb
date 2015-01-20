@@ -1,0 +1,58 @@
+<section id="diplomados">
+<div class="jumbotron">
+
+  <h3 align="center"><%= @diplomado.nombre %></h3>
+  <hr/>
+  	<p>
+	  <strong>Descripción:</strong>
+	  <%= @diplomado.descripcion %>
+	</p>
+	<p>
+	  <strong>Objetivos:</strong>
+	  <ul>
+	    <% @diplomado.objetivos.split("|").each do |objetivo| %>
+	      <li><%= objetivo %></li>
+	    <% end %>
+	  </ul>
+	</p>
+	<p>
+	  <strong>Dirigido A:</strong>
+	  <ul>
+	    <% @diplomado.dirigido.split("|").each do |dirigido| %>
+	      <li><%= dirigido %></li>
+	    <% end %>
+	  </ul>
+	</p>
+	<p>
+	  <strong>Modulos y Cursos:</strong>
+	  
+        <div class="panel-group" id="accordion">
+          <% @diplomado.modulos.each do |modulo| %>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <b><%= modulo.nombre %></b>
+              </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+              <div class="panel-body">
+                <table class="table">
+                  <tbody>
+		              <% modulo.cursos.each do |curso| %>
+		                <tr>
+		                  <td>
+		                      <%= curso.nombre %>
+		                  </td>
+		                </tr>
+		              <% end %>  
+		          </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+	</p>
+
+</div>
+</section>

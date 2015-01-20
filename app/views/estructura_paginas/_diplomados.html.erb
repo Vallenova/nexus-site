@@ -16,7 +16,9 @@
               <% if area == area_diplomado.area %>
                 <tr>
                   <td>
-                    <a href="#"><%= area_diplomado.diplomado.nombre %></a>
+                    <%= link_to(diplomado_path(area_diplomado.diplomado)) do %>
+                      <%= area_diplomado.diplomado.nombre %>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>
