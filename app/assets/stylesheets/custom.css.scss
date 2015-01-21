@@ -15,6 +15,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  -webkit-background-size: 100%; 
+  -moz-background-size: 100%; 
+  -o-background-size: 100%; 
+  background-size: 100%; 
 }
 
 /********* Logo *********/
@@ -375,10 +379,12 @@ float:none;
   padding: 10px;
 }
 
-.container .jumbotron
+#diplomado 
 {
   margin-top: 30px;
   padding-top: 30px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
   background: transparent;
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 1;
@@ -386,8 +392,7 @@ float:none;
 
 }
 
-.jumbotron p {
+#diplomado  p {
     margin-bottom: 15px;
-    font-size: 14px;
     font-weight: 200;
 }
