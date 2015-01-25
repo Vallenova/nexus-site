@@ -14,6 +14,7 @@ gem 'high_voltage', '2.1.0'
 gem 'thin', '1.6.2'
 gem "font-awesome-rails"
 gem 'carrierwave'
+gem 'devise', '~> 3.4.1'
 
 group :development do
   gem 'spring', '1.1.3'
