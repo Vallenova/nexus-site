@@ -21,6 +21,9 @@
           <a href="#"></a>
         </li>
       </ul>
+      <% if usuario_signed_in? %>
+      <p class="navbar-text navbar-right">Identificado como <%= current_usuario.email %>, <%= link_to 'Salir', destroy_usuario_session_path, method: :delete %></p>
+      <% end %>
     </div>
     <hr>
   </div>
