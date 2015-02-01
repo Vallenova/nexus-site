@@ -1,0 +1,53 @@
+<% provide(:titulo, @diplomado.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_diplomados_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_diplomado_path(@diplomado) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Nombre:</strong>
+  <%= @diplomado.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@diplomado.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @diplomado.descripcion %>
+</p>
+
+<p>
+  <strong>Objetivos:</strong>
+  <%= @diplomado.objetivos %>
+</p>
+
+<p>
+  <strong>Dirigido:</strong>
+  <%= @diplomado.dirigido %>
+</p>
+
+<p>
+  <strong>Créditos:</strong>
+  <%= @diplomado.creditos %>
+</p>
+
+<p>
+  <strong>Horas Academicos:</strong>
+  <%= @diplomado.horas_acad %>
+</p>
+
+<p>
+  <strong>Inversión:</strong>
+  <%= @diplomado.inversion %>
+</p>
+
+<p>
+  <strong>Picture:</strong><br>
+  <%= image_tag(@diplomado.picture, :width => 100) if @diplomado.picture.present? %>
+</p>

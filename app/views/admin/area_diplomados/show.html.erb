@@ -1,0 +1,25 @@
+<% provide(:titulo, @area_diplomado.area.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_area_diplomados_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_area_diplomado_path(@area_diplomado) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Área:</strong>
+  <%= @area_diplomado.area.nombre %>
+</p>
+
+<p>
+  <strong>Diplomado:</strong>
+  <%= @area_diplomado.diplomado.nombre %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@area_diplomado.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+

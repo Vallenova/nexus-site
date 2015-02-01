@@ -1,0 +1,48 @@
+<% provide(:titulo, "Nuevo Modulo") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_modulo_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_modulos_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @modulo, url: admin_modulos_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @modulo.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+      El formulario contiene <%= pluralize(@modulo.errors.count, "error") %>
+    
+        <ul>
+          <% @modulo.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :diplomado_id, "Diplomado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :diplomado_id, options_from_collection_for_select(@diplomados, 'id', 'nombre') %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, "Estado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]]) %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

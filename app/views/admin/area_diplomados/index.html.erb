@@ -1,0 +1,31 @@
+<% provide(:titulo, "Asignación de Áreas y Diplomados") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_area_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_area_diplomados_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Area</th>
+      <th>Diplomado</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @area_diplomados.each do |area_diplomado| %>
+      <tr>
+        <td><%= link_to "#{area_diplomado.id}", admin_area_diplomado_path(area_diplomado) %></td>
+        <td><%= area_diplomado.area.nombre %></td>
+        <td><%= area_diplomado.diplomado.nombre %></td>
+        <td><%= area_diplomado.estado %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

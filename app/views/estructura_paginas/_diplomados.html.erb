@@ -12,21 +12,17 @@
       <div class="panel-body">
         <table class="table">
           <tbody>
-            <tr>
-              <td>
-                <a href="#">Habilidades Directivas</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Marketing</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="#">Finanzas</a>
-              </td>
-            </tr>
+            <% @area_diplomados.each do |area_diplomado| %>
+              <% if area == area_diplomado.area %>
+                <tr>
+                  <td>
+                    <%= link_to(diplomado_path(area_diplomado.diplomado)) do %>
+                      <%= area_diplomado.diplomado.nombre %>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
           </tbody>
         </table>
       </div>

@@ -1,0 +1,83 @@
+<% provide(:titulo, "Editar Diplomado") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_diplomados_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @diplomado, url: admin_diplomado_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @diplomado.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+      El formulario contiene <%= pluralize(@diplomado.errors.count, "error") %>
+    
+        <ul>
+          <% @diplomado.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, "Estado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]], @diplomado.estado) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :descripcion, "Descripción", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :descripcion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :objetivos, "Objetivos", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :objetivos, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dirigido, "Dirigido a", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :dirigido, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :creditos, "Créditos", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :creditos, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :horas_acad, "Horas Academicas", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :horas_acad, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :inversion, "Inversión", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :inversion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture, "Imagen", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :picture, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

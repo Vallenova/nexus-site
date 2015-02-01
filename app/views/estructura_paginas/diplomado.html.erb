@@ -1,0 +1,74 @@
+<div id="diplomado" class="col-md-12">
+
+  <hr/>
+  <h3 align="center"><%= @diplomado.nombre %></h3>
+  <hr/>
+
+
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-4">
+    <div class="contenido-medio" align="center">
+      <%= image_tag @diplomado.picture, class: "img-responsive" %>
+    </div>
+
+  	<p>
+	  <h4>Descripción:</h4>
+	  <%= @diplomado.descripcion %>
+	</p>
+	<p>
+	  <h4>Objetivos:</h4>
+	  <ul>
+	    <% @diplomado.objetivos.split("|").each do |objetivo| %>
+	      <li><%= objetivo %></li>
+	    <% end %>
+	  </ul>
+	</p>
+    <p>
+	  <h4>Créditos:</h4>
+	  <%= @diplomado.creditos %>
+	</p>
+	<p>
+	  <h4>Horas Academicas:</h4>
+	  <%= @diplomado.horas_acad %>
+	</p>
+	<p>
+	  <h4>Dirigido A:</h4>
+	  <ul>
+	    <% @diplomado.dirigido.split("|").each do |dirigido| %>
+	      <li><%= dirigido %></li>
+	    <% end %>
+	  </ul>
+	</p>
+		
+  </div>
+  <div class="col-md-4">
+  	<p>
+	  <h4>Módulos y Cursos:</h4>
+	  
+	<% @diplomado.modulos.each do |modulo| %>
+	<div class="table-responsive">
+	<table class="table">
+	  <thead>
+	    <tr>
+	      <th ><%= modulo.nombre %></th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+		<% modulo.cursos.each do |curso| %>
+		  <tr>
+		    <td>
+		      <%= curso.nombre %>
+		    </td>
+		  </tr>
+		<% end %>  
+	  </tbody>
+	</table>
+	</div>
+	<% end %>
+	</p>
+  </div>
+  <div class="col-md-2">
+  </div>
+</div>

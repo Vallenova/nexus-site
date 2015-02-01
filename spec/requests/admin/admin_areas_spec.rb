@@ -41,12 +41,12 @@ RSpec.describe "Admin::Areas", :type => :request do
       before do
         fill_in "Nombre", with: "Ingenieria"
         select 'Activo', :from => 'Estado'
-        fill_in "Picture", with: "bg4.jpg"
+        fill_in "Imagen", with: "bg4.jpg"
       end
 
       it "deberia crear un area" do
         expect { click_button enviar }.to change(Area, :count)
-       end
+      end
 
     end
   end

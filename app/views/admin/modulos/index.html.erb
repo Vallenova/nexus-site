@@ -1,0 +1,31 @@
+<% provide(:titulo, "Módulos") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_modulo_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_modulos_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th>Diplomado</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @modulos.each do |modulo| %>
+      <tr>
+        <td><%= link_to "#{modulo.id}", admin_modulo_path(modulo) %></td>
+        <td><%= modulo.nombre %></td>
+        <td><%= modulo.estado %></td>
+        <td><%= modulo.diplomado.nombre %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,48 @@
+<% provide(:titulo, "Editar Curso") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_curso_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_cursos_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @curso, url: admin_curso_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @curso.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+      El formulario contiene <%= pluralize(@curso.errors.count, "error") %>
+    
+        <ul>
+          <% @curso.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= f.label :modulo_id, "Módulo", class: "col-lg-2" %>
+    <div class="col-lg-6">
+      <%= f.select :modulo_id, option_groups_from_collection_for_select(@diplomados, :modulos, :nombre, :id, :nombre, @curso.modulo_id), {}, {class: "form-control"} %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :nombre, "Nombre", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :nombre, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, "Estado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]], @curso.estado) %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

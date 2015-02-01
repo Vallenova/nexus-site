@@ -1,0 +1,29 @@
+<% provide(:titulo, "Diplomados") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_diplomado_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_diplomados_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diplomados.each do |diplomado| %>
+      <tr>
+        <td><%= link_to "#{diplomado.id}", admin_diplomado_path(diplomado) %></td>
+        <td><%= diplomado.nombre %></td>
+        <td><%= diplomado.estado %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

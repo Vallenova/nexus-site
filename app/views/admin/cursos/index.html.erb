@@ -1,0 +1,33 @@
+<% provide(:titulo, "Cursos") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_curso_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_cursos_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Estado</th>
+      <th>Modulo</th>
+      <th>Diplomado</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cursos.each do |curso| %>
+      <tr>
+        <td><%= link_to "#{curso.id}", admin_curso_path(curso) %></td>
+        <td><%= curso.nombre %></td>
+        <td><%= curso.estado %></td>
+        <td><%= curso.modulo.nombre %></td>
+        <td><%= curso.modulo.diplomado.nombre %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

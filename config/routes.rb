@@ -5,13 +5,29 @@ Rails.application.routes.draw do
 
   #get 'estructura_paginas/inicio'
   root 'estructura_paginas#inicio'
-  match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
-  
+  #match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
+  get 'acerca'        => 'estructura_paginas#acerca'
+  get 'diplomado/:id' => 'estructura_paginas#diplomado', :as => 'diplomado'
+
   namespace :admin do
     #resources :admin_paginas
     resources :areas
+    resources :diplomados
+    resources :modulos
+    resources :cursos
+    resources :area_diplomados
     root 'admin_paginas#index'
-    match '/nueva_area',  to: 'areas#new',            via: 'get'
+    #match desaparecera en rails 5
+    #match '/nueva_area',  to: 'areas#new',            via: 'get'
+    #match '/nuevo_diplomado', to: 'diplomados#new',   via: 'get'
+    #match '/nuevo_modulo', to: 'modulos#new',         via: 'get'
+    #match '/nuevo_curso', to: 'cursos#new',           via: 'get'
+
+    get 'nueva_area'        => 'areas#new'
+    get 'nuevo_diplomado'   => 'diplomados#new'
+    get 'nuevo_modulo'      => 'modulos#new'
+    get 'nuevo_curso'       => 'cursos#new'
+    get 'nueva_area_diplomado'  => 'area_diplomados#new'
     #get 'areas/new'
 
   end
