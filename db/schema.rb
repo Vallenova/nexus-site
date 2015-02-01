@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150111174500) do
+ActiveRecord::Schema.define(version: 20150123054053) do
 
   create_table "area_diplomados", force: :cascade do |t|
     t.string   "estado"
@@ -84,4 +84,5 @@ ActiveRecord::Schema.define(version: 20150111174500) do
 
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
   add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
+
 end
