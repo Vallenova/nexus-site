@@ -11,9 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141228163445) do
-=======
 ActiveRecord::Schema.define(version: 20150111174500) do
 
   create_table "area_diplomados", force: :cascade do |t|
@@ -27,7 +24,6 @@ ActiveRecord::Schema.define(version: 20150111174500) do
   add_index "area_diplomados", ["area_id", "diplomado_id"], name: "index_area_diplomados_on_area_id_and_diplomado_id", unique: true
   add_index "area_diplomados", ["area_id"], name: "index_area_diplomados_on_area_id"
   add_index "area_diplomados", ["diplomado_id"], name: "index_area_diplomados_on_diplomado_id"
->>>>>>> 5e1506d57475e4f04e559bb44c57d747eede2db3
 
   create_table "areas", force: :cascade do |t|
     t.string   "nombre"
@@ -37,23 +33,14 @@ ActiveRecord::Schema.define(version: 20150111174500) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-  create_table "usuarios", force: :cascade do |t|
-    t.string   "email"
-    t.string   "nombres"
-    t.string   "apellidos"
-=======
   create_table "cursos", force: :cascade do |t|
     t.string   "nombre"
     t.string   "estado"
     t.integer  "modulo_id"
->>>>>>> 5e1506d57475e4f04e559bb44c57d747eede2db3
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   add_index "cursos", ["modulo_id"], name: "index_cursos_on_modulo_id"
 
   create_table "diplomados", force: :cascade do |t|
@@ -80,5 +67,21 @@ ActiveRecord::Schema.define(version: 20150111174500) do
 
   add_index "modulos", ["diplomado_id"], name: "index_modulos_on_diplomado_id"
 
->>>>>>> 5e1506d57475e4f04e559bb44c57d747eede2db3
+  create_table "usuarios", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true
+  add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
 end

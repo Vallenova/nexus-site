@@ -1,0 +1,2 @@
+module Autenticacion::RegistrationsHelper
+end

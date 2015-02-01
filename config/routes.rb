@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :usuarios, :controllers => {:sessions => "autenticacion/sessions", :registrations => "autenticacion/registrations"}
   #namespace :admin do
   #get 'areas/new'
   #end
