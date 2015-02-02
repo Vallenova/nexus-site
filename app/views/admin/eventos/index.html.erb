@@ -1,0 +1,38 @@
+<% provide(:titulo, "Eventos") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_evento_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_eventos_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Diplomado</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Modalidad</th>
+        <th>Inversión</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @eventos.each do |evento| %>
+        <tr>
+          <td><%= link_to "#{evento.id}", admin_evento_path(evento) %></td>
+          <td><%= evento.diplomado.nombre %></td>
+          <td><%= evento.fecha_inicio.strftime("%d/%m/%Y") %></td>
+          <td><%= evento.fecha_fin.strftime("%d/%m/%Y") %></td>
+          <td><%= evento.modalidad %></td>
+          <td><%= evento.inversion %></td>
+          <td><%= evento.estado %></td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

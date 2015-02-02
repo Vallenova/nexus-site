@@ -47,7 +47,7 @@
 
 	          <% @areas.each do |area| %>
 	            <li class="dropdown-submenu">
-		          <a tabindex="-1"><b><%= area.nombre %></b></a>
+		          <a tabindex="-1"><%= area.nombre %></a>
 			      <ul class="dropdown-menu">
 			 	    <% @area_diplomados.each do |area_diplomado| %>
 		              <% if area == area_diplomado.area %>
@@ -68,7 +68,7 @@
 		      
       	    </ul>
      	  </li>
-     	  <li><a href="#">CALENDARIO</a></li>
+     	  <li><%= link_to "CALENDARIO", calendario_path %></li>
      	  <li><a href="#">INSCRIPCIÓN</a></li>  
      	  <li><a href="#">CONTACTO</a></li>                   
         </ul>

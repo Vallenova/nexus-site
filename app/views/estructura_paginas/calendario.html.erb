@@ -1,0 +1,33 @@
+<hr>
+<div class="row text-center">
+  <h3>CALENDARIO</h3>
+</div>
+<hr>
+<div id="calendario" class="col-md-12">
+  <div class="row">
+    <% @eventos.each do |evento| %>
+      <div class="col-md-3 col-sm-6">
+        <div class="widget widget-stats bg-red">
+          <div class="stats-icon">
+            <i class="<%= evento.modalidad == 'Presencial' ? 'fa fa-users' : 'fa fa-desktop' %> "></i>
+          </div>
+          <div class="stats-info">
+            <h4><%= evento.diplomado.nombre %></h4>
+            <p><%= evento.fecha_inicio.strftime("%d/%m/%Y") %></p>
+            <h4><%= evento.modalidad %></h4>
+            <h4>Inversión: S/. <%= evento.inversion %></h4>
+            <h4>Fin: <%= evento.fecha_fin.strftime("%d/%m/%Y") %></h4>
+          </div>
+          <div class="stats-link">
+            <%= link_to(diplomado_path(evento.diplomado.id)) do %>
+              Ver Diplomado <i class="fa fa-arrow-circle-o-right"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div align="center">
+    <%= will_paginate @eventos , :previous_label => '<<', :next_label => '>>', :page_links => false %>
+  </div>
+</div>

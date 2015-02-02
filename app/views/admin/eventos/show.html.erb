@@ -1,0 +1,39 @@
+<% provide(:titulo, @evento.diplomado.nombre) %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nuevo_evento_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_eventos_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_evento_path(@evento) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Fecha Incio:</strong>
+  <%= @evento.fecha_inicio.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Fecha Fin:</strong>
+  <%= @evento.fecha_fin.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Modalidad:</strong>
+  <%= @evento.modalidad %>
+</p>
+
+<p>
+  <strong>Inversión:</strong>
+  <%= @evento.inversion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@evento.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+<p>
+  <strong>Diplomado:</strong>
+  <%= @evento.diplomado.nombre %>
+</p>
+

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   #match '/acerca',    to: 'estructura_paginas#acerca',    via: 'get'
   get 'acerca'        => 'estructura_paginas#acerca'
   get 'diplomado/:id' => 'estructura_paginas#diplomado', :as => 'diplomado'
+  get 'calendario'    => 'estructura_paginas#calendario'
+  get 'evento/:id'    => 'estructura_paginas#evento', :as => 'evento'
 
   namespace :admin do
     #resources :admin_paginas
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
     resources :modulos
     resources :cursos
     resources :area_diplomados
+    resources :eventos
     root 'admin_paginas#index'
     #match desaparecera en rails 5
     #match '/nueva_area',  to: 'areas#new',            via: 'get'
@@ -29,6 +32,7 @@ Rails.application.routes.draw do
     get 'nuevo_modulo'      => 'modulos#new'
     get 'nuevo_curso'       => 'cursos#new'
     get 'nueva_area_diplomado'  => 'area_diplomados#new'
+    get 'nuevo_evento'      => 'eventos#new'
     #get 'areas/new'
 
   end

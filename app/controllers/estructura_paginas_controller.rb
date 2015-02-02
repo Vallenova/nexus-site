@@ -1,5 +1,5 @@
 class EstructuraPaginasController < ApplicationController
-  before_action :set_area_diplomados, only: [:inicio, :acerca, :diplomado]
+  before_action :set_area_diplomados, only: [:inicio, :acerca, :diplomado, :calendario, :evento]
 
   def inicio
   end
@@ -9,6 +9,14 @@ class EstructuraPaginasController < ApplicationController
 
   def diplomado
   	@diplomado= Diplomado.find(params[:id])
+  end
+
+  def calendario
+    @eventos= Evento.where(estado: 'A').order(:fecha_inicio).paginate(page: params[:page], :per_page => 8)
+  end
+
+  def evento
+    @evento= Evento.find(params[:id])
   end
 
   private
