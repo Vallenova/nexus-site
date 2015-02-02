@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123054053) do
+ActiveRecord::Schema.define(version: 20150129131637) do
 
   create_table "area_diplomados", force: :cascade do |t|
     t.string   "estado"
@@ -56,6 +56,19 @@ ActiveRecord::Schema.define(version: 20150123054053) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "eventos", force: :cascade do |t|
+    t.datetime "fecha_inicio"
+    t.datetime "fecha_fin"
+    t.string   "modalidad"
+    t.integer  "inversion"
+    t.string   "estado"
+    t.integer  "diplomado_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "eventos", ["diplomado_id"], name: "index_eventos_on_diplomado_id"
 
   create_table "modulos", force: :cascade do |t|
     t.string   "nombre"
