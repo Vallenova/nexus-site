@@ -1,3 +1,3 @@
 class Autenticacion::RegistrationsController < Devise::RegistrationsController
-	layout 'admin'
+	layout 'login'
 end

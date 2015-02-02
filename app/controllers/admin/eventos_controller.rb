@@ -1,4 +1,5 @@
 class Admin::EventosController < ApplicationController
+  before_filter :authenticate_usuario!
   layout 'admin'
 
   def index

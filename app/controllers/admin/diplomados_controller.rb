@@ -1,4 +1,5 @@
 class Admin::DiplomadosController < ApplicationController
+  before_filter :authenticate_usuario!
   layout 'admin'
 
   def show

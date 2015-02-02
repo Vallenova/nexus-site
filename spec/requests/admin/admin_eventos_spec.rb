@@ -1,14 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe "Admin::Eventos", :type => :request do
-  describe "GET /admin_eventos" do
-    it "Eventos" do
-      get admin_eventos_path
-      expect(response).to have_http_status(200)
-    end
-  end
+  # describe "GET /admin_eventos" do
+  #   it "Eventos" do
+  #     get admin_eventos_path
+  #     expect(response).to have_http_status(200)
+  #   end
+  # end
 
   subject {page}
+
+  let(:usuario) { FactoryGirl.create(:usuario) }
+
+  before {
+    visit admin_eventos_path
+    fill_in "Email",    with: usuario.email
+    fill_in "Password", with: usuario.password
+    click_button "Log in"
+  }
 
   describe 'index' do
   	it "Deberia tener el contenido Eventos" do

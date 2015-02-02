@@ -1,14 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe "Admin::Area_diplomados", :type => :request do
-  describe "GET /admin_area_diplomados" do
-    it "Area_diplomados" do
-      get admin_area_diplomados_path
-      expect(response).to have_http_status(200)
-    end
-  end
+  # describe "GET /admin_area_diplomados" do
+  #   it "Area_diplomados" do
+  #     get admin_area_diplomados_path
+  #     expect(response).to have_http_status(200)
+  #   end
+  # end
 
-   subject {page}
+  subject {page}
+
+  let(:usuario) { FactoryGirl.create(:usuario) }
+
+  before {
+    visit admin_area_diplomados_path
+    fill_in "Email",    with: usuario.email
+    fill_in "Password", with: usuario.password
+    click_button "Log in"
+  }
 
   describe 'index' do
    	it "Deberia tener el contenido Asignación" do

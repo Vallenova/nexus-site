@@ -1,3 +1,3 @@
 class Autenticacion::SessionsController < Devise::SessionsController
-	layout 'admin'
+	layout 'login'
 end

@@ -1,4 +1,5 @@
 class Admin::CursosController < ApplicationController
+  before_filter :authenticate_usuario!
   layout 'admin'
 
   def index

@@ -1,5 +1,5 @@
 class Admin::AdminPaginasController < ApplicationController
-	before_filter :authenticate_usuario!
+  before_filter :authenticate_usuario!
   layout 'admin'
 
   def index
