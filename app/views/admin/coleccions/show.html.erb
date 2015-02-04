@@ -1,0 +1,28 @@
+<% provide(:titulo, 'Item') %>
+<div class="btn-toolbar" role="toolbar">  
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_coleccion_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_coleccions_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to 'Editar', edit_admin_coleccion_path(@coleccion) %></div>
+  </div>
+</div>
+<hr>
+<p>
+  <strong>Descripción:</strong>
+  <%= @coleccion.descripcion %>
+</p>
+
+<p>
+  <strong>URL:</strong>
+  <%= @coleccion.url %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= (@coleccion.estado == 'A' ? "Activo" : "Inactivo") %>
+</p>
+
+<p>
+  <strong>Picture:</strong><br>
+  <%= image_tag(@coleccion.picture, :width => 100) if @coleccion.picture.present? %>
+</p>

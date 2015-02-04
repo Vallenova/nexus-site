@@ -1,0 +1,19 @@
+<div id="recent-works">
+  <div class="row">
+    <% @coleccions.each do |coleccion| %>
+      <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="recent-work-wrap">
+          <%= image_tag coleccion.picture, class: "img-responsive" %>
+          <div class="comentario"><p><%= coleccion.descripcion %></p></div>
+          <%= link_to(coleccion.url) do %>
+            <div class="overlay">
+              <div class="recent-work-inner">
+                <h3><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp Ver</h3>
+              </div> 
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -23,6 +23,7 @@ class EstructuraPaginasController < ApplicationController
     def set_area_diplomados
       @area_diplomados = AreaDiplomado.where(estado: 'A').order(:id)
   	  @areas=Area.where(estado: 'A').order(:id)
+      @coleccions=Coleccion.where(estado: 'A').order(:id)
     end
   
 end

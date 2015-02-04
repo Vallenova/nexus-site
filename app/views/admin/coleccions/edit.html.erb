@@ -1,0 +1,53 @@
+<% provide(:titulo, "Editar Item") %>
+<div class="btn-toolbar" role="toolbar">
+  <div class="btn-group">
+    <div class="btn btn-default"><%= link_to "Nuevo", admin_nueva_coleccion_path, id: "logo" %></div>
+    <div class="btn btn-default"><%= link_to "Listar", admin_coleccions_path, id: "logo" %></div>
+  </div>
+</div>
+<hr>
+<%= form_for @coleccion, url: admin_coleccion_path, :html => {:multipart => true, :class => "form-horizontal"} do |f| %>
+  <% if @coleccion.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        El formulario contiene <%= pluralize(@coleccion.errors.count, "error") %>
+      
+      <ul>
+      <% @coleccion.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :descripcion, "Descripción", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_field :descripcion, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :url, "URL", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :url, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :estado, "Estado", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.select :estado, options_for_select([["Activo", "A"], ["Inactivo", "I"]], @coleccion.estado) %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture, "Imagen", class: "col-lg-2" %>
+    <div class="col-lg-4">
+      <%= f.text_area :picture, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-2">
+      <%= f.submit "Guardar", class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>

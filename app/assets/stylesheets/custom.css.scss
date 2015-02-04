@@ -178,6 +178,16 @@
     margin-bottom: 20px;
   }
 
+  .carousel-control.right {
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+
+  .carousel-control.left {
+    background-image: none;
+    background-repeat: no-repeat;
+  }
+
   /******Pie de Pagina ******/
   .footer {
     background: transparent;
@@ -394,6 +404,18 @@
   #diplomado  p {
     margin-bottom: 15px;
     font-weight: 200;
+  }
+
+  #acerca 
+  {
+    margin-top: 30px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    background: transparent;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    color: inherit;
   }
 
   #calendario
